@@ -1,0 +1,151 @@
+.news-section {
+    padding: 80px 5%;
+    background-color: var(--rcb-black);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--rcb-red);
+    padding-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--rcb-white);
+}
+
+.view-all {
+    color: var(--rcb-gold);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-image {
+    position: relative;
+    height: 200px;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--rcb-red);
+    color: white;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.news-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--rcb-white);
+    line-height: 1.4;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Modal Details (Keep specific modal content styling here) */
+.modal-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 40px;
+    color: #334155;
+}
+
+.modal-date {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--rcb-red);
+}
+
+.modal-body h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #0f172a;
+}
+
+.modal-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #475569;
+}
+
+.full-content-notice {
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.full-content-notice a {
+    color: var(--rcb-red);
+    font-weight: 700;
+}
+
+.read-more {
+    margin-top: auto;
+    color: var(--rcb-red);
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-card {
+    cursor: pointer;
+}
