@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 import "./Booking.css";
 
-const API = "http://localhost:5000/api";
+const API = "/api";
 
 const STADIUMS = [
     {

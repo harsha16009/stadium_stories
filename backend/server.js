@@ -250,6 +250,15 @@ const paymentRoutes = require('./routes/payment');
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
 
+// Serve frontend in production
+const path = require('path');
+const frontendDistPath = path.join(__dirname, '../frontend/dist');
+app.use(express.static(frontendDistPath));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

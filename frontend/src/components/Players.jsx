@@ -29,8 +29,8 @@ const Players = () => {
 
         try {
             const url = search
-                ? `http://localhost:5000/api/players?search=${search}`
-                : 'http://localhost:5000/api/players';
+                ? `/api/players?search=${search}`
+                : '/api/players';
             const response = await axios.get(url);
 
             // If no search, mix featured with others
@@ -54,7 +54,7 @@ const Players = () => {
     const fetchPlayerDetail = async (id) => {
         setFetchingDetails(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/player-info?id=${id}`);
+            const response = await axios.get(`/api/player-info?id=${id}`);
             setPlayerDetails(response.data);
         } catch (error) {
             console.error('Error fetching player details:', error);

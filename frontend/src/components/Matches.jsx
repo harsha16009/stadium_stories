@@ -16,7 +16,7 @@ const Matches = () => {
     const fetchMatchInfo = async (id) => {
         setFetchingDetails(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/match-info?id=${id}`);
+            const response = await axios.get(`/api/match-info?id=${id}`);
             setMatchDetails(response.data);
         } catch (error) {
             console.error('Error fetching match details:', error);
@@ -36,10 +36,10 @@ const Matches = () => {
             setLoading(true);
             try {
                 const [matchesRes, currentRes, wcRes, countriesRes] = await Promise.all([
-                    axios.get('http://localhost:5000/api/matches'),
-                    axios.get('http://localhost:5000/api/current-matches'),
-                    axios.get('http://localhost:5000/api/t20-world-cup-matches'),
-                    axios.get('http://localhost:5000/api/countries')
+                    axios.get('/api/matches'),
+                    axios.get('/api/current-matches'),
+                    axios.get('/api/t20-world-cup-matches'),
+                    axios.get('/api/countries')
                 ]);
 
                 setMatches(matchesRes.data || []);

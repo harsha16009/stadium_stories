@@ -8,7 +8,7 @@ const Hero = () => {
     useEffect(() => {
         const fetchLive = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/current-matches');
+                const response = await axios.get('/api/current-matches');
                 let matches = response.data || [];
 
                 // Ensure there's an India vs Australia score to show

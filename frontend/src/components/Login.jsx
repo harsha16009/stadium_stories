@@ -23,7 +23,7 @@ const Login = ({ onLoginSuccess }) => {
 
         try {
             const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-            const response = await axios.post(`http://localhost:5000${endpoint}`, formData);
+            const response = await axios.post(`${endpoint}`, formData);
 
             setMessage({ type: 'success', text: isLogin ? 'Login Successful!' : 'Registration Successful!' });
 

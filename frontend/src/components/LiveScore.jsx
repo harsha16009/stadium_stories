@@ -9,7 +9,7 @@ const LiveScore = () => {
     useEffect(() => {
         const fetchScores = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/live-scores');
+                const response = await axios.get('/api/live-scores');
                 setMatches(response.data);
             } catch (error) {
                 console.error('Error fetching scores:', error);

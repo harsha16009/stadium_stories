@@ -9,7 +9,7 @@ const SeriesList = () => {
     useEffect(() => {
         const fetchSeries = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/series');
+                const response = await axios.get('/api/series');
                 setSeries(response.data);
             } catch (error) {
                 console.error('Error fetching series:', error);
