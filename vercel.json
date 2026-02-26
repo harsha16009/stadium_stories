@@ -1,26 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "frontend/package.json",
-            "use": "@vercel/vite"
-        },
-        {
-            "src": "backend/server.js",
-            "use": "@vercel/node"
-        }
-    ],
+    "buildCommand": "cd frontend && npm install && npm run build && cd .. && node collect-static.js",
+    "outputDirectory": "public",
     "rewrites": [
         {
             "source": "/api/(.*)",
-            "destination": "/backend/server.js"
+            "destination": "/api/index.js"
         },
         {
             "source": "/(.*)",
-            "destination": "/frontend/dist/index.html"
+            "destination": "/index.html"
         }
-    ],
-    "env": {
-        "NODE_VERSION": "18.x"
-    }
+    ]
 }
