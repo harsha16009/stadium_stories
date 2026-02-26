@@ -11,7 +11,7 @@ import './App.css'
 
 function App() {
   const [activeSection, setActiveSection] = useState('HOME')
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   // Check for existing session
   useEffect(() => {
@@ -34,9 +34,6 @@ function App() {
   }
 
   const renderSection = () => {
-    if (!isLoggedIn) {
-      return <Login onLoginSuccess={handleLogin} />;
-    }
 
     switch (activeSection) {
       case 'HOME':
