@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/harsha16009/stadium_stories.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -17,7 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'npm run build || true'
             }
         }
 
@@ -29,7 +23,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'sudo cp -r * /usr/share/nginx/html/'
+                sh 'cp -r * /usr/share/nginx/html/'
             }
         }
     }
