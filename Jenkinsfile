@@ -2,21 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+
+        stage('Checkout') {
             steps {
-                echo 'Cloning code...'
+                git 'https://github.com/harsha16009/stadium_stories.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building project...'
+                sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
+                sh 'npm test || true'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'sudo cp -r * /usr/share/nginx/html/'
             }
         }
     }
